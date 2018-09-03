@@ -60,3 +60,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Friendly id for slugs 
+gem 'friendly_id', '~> 5.2', '>= 5.2.4'
+# Devise for Authentication
+gem 'devise', '~> 4.5'
+# Petergate for Role Delegation
+gem 'petergate', '~> 1.8', '>= 1.8.1'

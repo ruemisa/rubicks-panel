@@ -1,0 +1,19 @@
+<%= form_for(@course) do |f| %>
+
+  <div>
+    <%= f.text_field :title, placeholder: 'Course Title' %>
+  </div>
+
+  <div>
+    <%= f.text_field :total_hours, placeholder: 'Total Hours' %>
+  </div>
+
+  <div>
+    <%= f.text_area :details, placeholder: 'Course Details' %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

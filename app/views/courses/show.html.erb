@@ -1,0 +1,15 @@
+<h1>Welcome to the <%= @course.title %> course!</h1>
+<%= link_to 'Back', courses_path %>
+
+<p>Total Hours: <%= @course.total_hours %></p>
+
+<p><%= @course.details %></p>
+
+<h3> List of Cohorts </h3>
+
+
+<div>
+  <%= link_to 'Add Cohort', '#' %> 
+  <%= link_to 'Edit', edit_course_path(@course) %>
+  <%= link_to 'Remove', course_path(@course), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

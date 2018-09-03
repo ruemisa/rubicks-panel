@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :cohorts, except: [:show]
+  get 'cohort/:id' => 'cohorts#show', as: 'cohort_show'
+
+  resources :courses, except: [:show]
+  get 'course/:id' => 'courses#show', as: 'course_show'
+  
   # Other MAIN pages
   get 'about-us' => 'pages#about'
   get 'contact-us' => 'pages#contact'
