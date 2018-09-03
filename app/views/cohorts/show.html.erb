@@ -1,0 +1,8 @@
+<h1> Welcome to the <%= @cohort.name %> cohort!</h1>
+
+
+<%= link_to 'Back', course_show_path(@cohort.course_id) %>
+
+<%= link_to 'Add Students', '#' %>
+<%= link_to 'Assign Instructor', '#' %>
+<%= link_to 'Edit Details', edit_cohort_path %>
