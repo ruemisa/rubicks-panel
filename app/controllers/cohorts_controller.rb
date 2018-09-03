@@ -49,6 +49,10 @@ class CohortsController < ApplicationController
     end
   end
 
+  # >>>
+  # TODO: FIX DESTROY FUNCTIONALITY FOR COHORTS FUCK THIS SHIT
+  # <<<
+  
   def destroy
     @cohort.destroy
     p 'Removed Cohort'
