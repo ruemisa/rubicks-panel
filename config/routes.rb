@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :admins
   resources :students
   resources :instructors
   # User Authentication with devise. Customized default paths

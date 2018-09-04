@@ -4,9 +4,8 @@ one:
   first_name: MyString
   last_name: MyString
   age: 1
-  salary: 1
   education: MyString
-  user: one
+  salary: 1
   cohort: one
   course: one
 
@@ -14,8 +13,7 @@ two:
   first_name: MyString
   last_name: MyString
   age: 1
-  salary: 1
   education: MyString
-  user: two
+  salary: 1
   cohort: two
   course: two

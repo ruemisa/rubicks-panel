@@ -5,7 +5,6 @@ one:
   last_name: MyString
   age: 1
   education: MyString
-  user: one
   cohort: one
   course: one
 
@@ -14,6 +13,5 @@ two:
   last_name: MyString
   age: 1
   education: MyString
-  user: two
   cohort: two
   course: two

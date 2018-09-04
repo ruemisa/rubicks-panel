@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
-  belongs_to :user
   belongs_to :cohort
   belongs_to :course
+
+  has_one :user, as: :meta
 end

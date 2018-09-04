@@ -13,6 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  
-  has_one :admin
+  # To allow association with other models such as instructors and students
+  belongs_to :meta, polymorphic: true
+    
 end
