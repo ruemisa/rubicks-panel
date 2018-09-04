@@ -1,8 +1,27 @@
 <h1> Welcome to the <%= @cohort.name %> cohort!</h1>
 
+<p> Begin: <%= @cohort.start_date %> </p>
+<p> End: <%= @cohort.end_date %> </p>
 
-<%= link_to 'Back', course_show_path(@cohort.course_id) %>
+<%= notice %>
 
-<%= link_to 'Add Students', '#' %>
-<%= link_to 'Assign Instructor', '#' %>
-<%= link_to 'Edit Details', edit_cohort_path %>
+<h3> Attendees </h3>
+
+<% @cohort.students.each do |s| %>
+<div>
+  <%= link_to "#{s.full_name}", s %>
+  <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<div>
+  <%= link_to 'Back', course_show_path(@cohort.course_id) %>
+
+  <%= link_to 'Add Students', new_course_cohort_student_path(@cohort.course_id, @cohort.id) %>
+  <%= link_to 'Assign Instructor', '#' %>
+  <%= link_to 'Edit Details', edit_cohort_path %>
+</div>

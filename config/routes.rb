@@ -1,18 +1,28 @@
 Rails.application.routes.draw do
-
+  # GOD MODE
   resources :admins
-  resources :students
-  resources :instructors
+  
   # User Authentication with devise. Customized default paths
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'enroll' }
   
+  # Courses, Cohorts, Instructors, Students
   resources :courses, except: [:show] do
-    resources :cohorts, only: [:index, :new, :create, :destroy]
+    resources :cohorts, only: [:index, :new, :create, :destroy] do
+      resources :students, only:[:index, :new, :create, :destroy] 
+      resources :instructors, only: [:index, :new, :create, :destroy]
+    end
   end
   get 'course/:id' => 'courses#show', as: 'course_show'
   
+  # Cohorts only 
   resources :cohorts, only: [:show, :edit, :update], except: [:show]
   get 'cohort/:id' => 'cohorts#show', as: 'cohort_show'
+
+  # Instructors only
+  resources :instructors, only: [:show, :edit, :update]
+
+  # Students only
+  resources :students, only: [:show, :edit, :update]
 
   # Other MAIN pages
   get 'about-us' => 'pages#about'

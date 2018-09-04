@@ -1,8 +1,7 @@
 class CohortsController < ApplicationController
   before_action :set_cohort, only: [:edit, :update, :show, :destroy]
   # before_action authenticate_user!
-  # after_action :set_cohort, only: [:edit, :update, :show, :destroy]
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update]}, headmaster: :all
+  # access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update]}, headmaster: :all
 
   def index
     @cohorts = Cohort.all
@@ -59,7 +58,7 @@ class CohortsController < ApplicationController
     @cohort.destroy
     p 'Removed Cohort'
     respond_to do |format|
-      format.html { redirect_to course_show_path, notice: 'Cohort removed!' }
+      format.html { redirect_to courses_path , notice: 'Cohort removed!' }
     end
   end
 
