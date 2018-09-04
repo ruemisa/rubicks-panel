@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_005952) do
+ActiveRecord::Schema.define(version: 2018_09_04_015527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_admins_on_user_id"
+  end
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
@@ -49,6 +57,37 @@ ActiveRecord::Schema.define(version: 2018_09_04_005952) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "instructors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.integer "salary"
+    t.string "education"
+    t.bigint "user_id"
+    t.bigint "cohort_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
+    t.index ["course_id"], name: "index_instructors_on_course_id"
+    t.index ["user_id"], name: "index_instructors_on_user_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "education"
+    t.bigint "user_id"
+    t.bigint "cohort_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_students_on_cohort_id"
+    t.index ["course_id"], name: "index_students_on_course_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -67,5 +106,12 @@ ActiveRecord::Schema.define(version: 2018_09_04_005952) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "admins", "users"
   add_foreign_key "cohorts", "courses"
+  add_foreign_key "instructors", "cohorts"
+  add_foreign_key "instructors", "courses"
+  add_foreign_key "instructors", "users"
+  add_foreign_key "students", "cohorts"
+  add_foreign_key "students", "courses"
+  add_foreign_key "students", "users"
 end
