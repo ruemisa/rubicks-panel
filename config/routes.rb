@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  # User Authentication with devise. Customized default paths
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'enroll'}
   
-
-
   resources :courses, except: [:show] do
     resources :cohorts, only: [:index, :new, :create, :destroy]
   end
