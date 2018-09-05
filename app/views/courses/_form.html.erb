@@ -1,19 +1,23 @@
-<%= form_for(@course) do |f| %>
+<div class="<%= location %>">
 
-  <div>
-    <%= f.text_field :title, placeholder: 'Course Title', autofocus: true %>
-  </div>
+  <%= form_for(@course) do |f| %>
 
-  <div>
-    <%= f.text_field :total_hours, placeholder: 'Total Hours' %>
-  </div>
+    <div>
+      <%= f.text_field :title, placeholder: 'Course Title', autofocus: true %>
+    </div>
 
-  <div>
-    <%= f.text_area :details, placeholder: 'Course Details' %>
-  </div>
+    <div>
+      <%= f.text_field :total_hours, placeholder: 'Total Hours' %>
+    </div>
 
-  <div>
-    <%= f.submit %>
-  </div>
+    <div>
+      <%= f.text_area :details, placeholder: 'Course Details' %>
+    </div>
 
-<% end %>
+    <div>
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+
+</div>

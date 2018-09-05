@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rubicks Panel</title>
+    <title> <%= @page_title %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+    <link rel="stylesheet" type="text/css" href="assets/flaticon.css"> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <div class="wrapper">
+
+      <%= render "shared/header" %>
 
 
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_us_path %></li>
-        <li><%= link_to "Contact", contact_us_path %></li>
-        <li><%= link_to "Courses", courses_path %></li>
-      </ul>
-    </nav>
-    
-      <div>
-      <%= login_helper %>
-      </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+      <%= yield %>
+
+      <%= render "shared/footer" %>
+
+    </div>
+
   </body>
 </html>

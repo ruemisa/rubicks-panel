@@ -1,21 +1,23 @@
-<h1> Our Courses </h1>
+<div class="courses-index">
 
-<div>
-<%= notice %>
+  <h1> Course List </h1>
+
+  <div class="courses__create">
+    <%= link_to "Create Course", new_course_path  %>
+  </div>
+
+  <div class="courses__card">
+    <% @courses.each do |c| %>
+    <h3><%= link_to c.title, course_show_path(c) %></h3>
+    <p>Total Hours: <%= c.total_hours %></p>
+    <h4>Course Details > > ></h4>
+    <p><%= c.details %></p>
+
+    <div>
+      <%= link_to 'Edit', edit_course_path(c) %> 
+      <%= link_to 'Remove', course_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <% end %>
+  </div>
+
 </div>
-
-<div>
-<%= link_to "Create Course", new_course_path  %>
-</div>
-
-<% @courses.each do |c| %>
-<h3><%= link_to c.title, course_show_path(c) %></h3>
-<p>Total Hours: <%= c.total_hours %></p>
-<h4>Course Details > > ></h4>
-<p><%= c.details %></p>
-
-<div>
-  <%= link_to 'Edit', edit_course_path(c) %> 
-  <%= link_to 'Remove', course_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-<% end %>

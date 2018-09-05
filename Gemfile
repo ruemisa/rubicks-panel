@@ -67,3 +67,6 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'devise', '~> 4.5'
 # Petergate for Role Delegation
 gem 'petergate', '~> 1.8', '>= 1.8.1'
+
+# My personal copyright generator (yeah, lol)
+gem 'ram_dev_view_tool', '~> 0.1.1'

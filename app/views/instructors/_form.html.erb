@@ -13,7 +13,14 @@
   </div>
 
   <div>
-    <%= f.text_field :education, placeholder: 'Education' %>
+    <%= f.radio_button :education, 'HS', :checked => true %> 
+    <%= label :education_hs, 'HS' %>
+    <%= f.radio_button :education, 'College' %>
+    <%= label :education_college, 'College' %>
+    <%= f.radio_button :education, 'Masters' %>
+    <%= label :education_masters, 'Masters' %>
+    <%= f.radio_button :education, 'PHD' %>
+    <%= label :education_phd, 'PHD' %>
   </div>
 
   <div>
