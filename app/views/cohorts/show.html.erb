@@ -1,41 +1,41 @@
+<div class="cohorts-show">
 
+  <div class="back-links">
+    <%= link_to 'Back', course_show_path(@cohort.course_id) %>
+  </div>
 
-<h1> Welcome to the <%= @cohort.name %> cohort!</h1>
+  <h1> <%= @cohort.name %> | cohort details</h1>
+  
+  <div class="dates">
+    <p> Begin: <%= @cohort.start_date %> </p>
+    <p> End: <%= @cohort.end_date %> </p>
+  </div>
 
-<p> Begin: <%= @cohort.start_date %> </p>
-<p> End: <%= @cohort.end_date %> </p>
+  <div class="cohorts-links">
+      <%= link_to 'Add Students', new_course_cohort_student_path(@cohort.course_id, @cohort.id) %>
+      <%= link_to 'Assign Instructor', new_course_cohort_instructor_path(@cohort.course_id, @cohort.id) %>
+      <%= link_to 'Edit Details', edit_cohort_path %>
+  </div>
 
-<%= notice %>
+  <div class="cohort-details">
+    <h3> Instructor </h3>
 
-<h3> Instructor </h3>
+    <div>
+      <% i = @cohort.instructor %>
+      <% if i %>
+        <%= link_to "#{i.full_name}", i %>
+        <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
 
+    <h3> Attendees </h3>
 
-<div>
-  <% i = @cohort.instructor %>
-  <% if i %>
-    <%= link_to "#{i.full_name}", i %>
-    <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</div>
+      <% @cohort.students.each do |s| %>
+    <div>
+        <%= link_to "#{s.full_name}", s %>
+        <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+      <% end %>
+  </div>
 
-
-<h3> Attendees </h3>
-
-<% @cohort.students.each do |s| %>
-<div>
-  <%= link_to "#{s.full_name}", s %>
-  <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-<% end %>
-
-<br>
-<br>
-<br>
-
-<div>
-  <%= link_to 'Back', course_show_path(@cohort.course_id) %>
-
-  <%= link_to 'Add Students', new_course_cohort_student_path(@cohort.course_id, @cohort.id) %>
-  <%= link_to 'Assign Instructor', new_course_cohort_instructor_path(@cohort.course_id, @cohort.id) %>
-  <%= link_to 'Edit Details', edit_cohort_path %>
 </div>
