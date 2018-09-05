@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
   before_action :set_cohort, only: [:edit, :update, :show, :destroy]
+  before_action :set_parent, only: [:new, :create, :destroy]
   # before_action authenticate_user!
   # access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update]}, headmaster: :all
 
@@ -12,12 +13,10 @@ class CohortsController < ApplicationController
   end
 
   def new 
-    @course = Course.friendly.find(params[:course_id])
     @cohort = Cohort.new
   end
 
   def create
-    @course = Course.friendly.find(params[:course_id])
     @cohort = Cohort.new(cohort_params)
     @cohort.course_id = @course.id
 
@@ -58,7 +57,7 @@ class CohortsController < ApplicationController
     @cohort.destroy
     p 'Removed Cohort'
     respond_to do |format|
-      format.html { redirect_to courses_path , notice: 'Cohort removed!' }
+      format.html { redirect_to course_show_path(@course.slug) , notice: 'Cohort removed!' }
     end
   end
 
@@ -70,5 +69,9 @@ class CohortsController < ApplicationController
 
   def set_cohort
     @cohort = Cohort.friendly.find(params[:id])
+  end
+
+  def set_parent
+    @course = Course.friendly.find(params[:course_id])
   end
 end

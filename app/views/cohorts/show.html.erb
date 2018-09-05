@@ -5,6 +5,16 @@
 
 <%= notice %>
 
+<h3> Instructor </h3>
+
+
+<div>
+  <% i = @cohort.instructor %>
+  <%= link_to "#{i.full_name}", i %>
+  <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
+
 <h3> Attendees </h3>
 
 <% @cohort.students.each do |s| %>
@@ -22,6 +32,6 @@
   <%= link_to 'Back', course_show_path(@cohort.course_id) %>
 
   <%= link_to 'Add Students', new_course_cohort_student_path(@cohort.course_id, @cohort.id) %>
-  <%= link_to 'Assign Instructor', '#' %>
+  <%= link_to 'Assign Instructor', new_course_cohort_instructor_path(@cohort.course_id, @cohort.id) %>
   <%= link_to 'Edit Details', edit_cohort_path %>
 </div>

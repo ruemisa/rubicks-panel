@@ -4,7 +4,7 @@ class Instructor < ApplicationRecord
   friendly_id :first_name, use: :slugged
 
   # Data Validation
-  validates_presence_of :first_name, :last_name, :age, :education
+  validates_presence_of :first_name, :last_name, :age, :education, :salary
 
   # Associations
   belongs_to :cohort

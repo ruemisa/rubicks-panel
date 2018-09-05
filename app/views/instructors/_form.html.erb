@@ -1,0 +1,27 @@
+<%= form_for([@course, @cohort, @instructor]) do |f| %>
+
+  <div>
+    <%= f.text_field :first_name, placeholder: 'First Name', autofocus: true %>
+  </div>
+
+  <div>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  </div>
+
+  <div>
+    <%= f.text_field :age, placeholder: 'Age' %>
+  </div>
+
+  <div>
+    <%= f.text_field :education, placeholder: 'Education' %>
+  </div>
+
+  <div>
+    <%= f.text_field :salary, placeholder: 'Salary' %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

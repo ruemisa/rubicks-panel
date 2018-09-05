@@ -10,14 +10,10 @@ class StudentsController < ApplicationController
   end
 
   def new
-    @course = Course.friendly.find(params[:course_id])
-    @cohort = Cohort.friendly.find(params[:cohort_id])
     @student = Student.new
   end
 
   def create 
-    @course = Course.friendly.find(params[:course_id])
-    @cohort = Cohort.friendly.find(params[:cohort_id])
     @student = Student.new(student_params)
     @student.course_id = @course.id
     @student.cohort_id = @cohort.id 
@@ -36,6 +32,22 @@ class StudentsController < ApplicationController
     p 'Student has been denied!'
     respond_to do |format|
       format.html { redirect_to cohort_show_path(@cohort.slug), notice: "#{@student.first_name} has been denied" }
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+    respond_to do |format|
+      if @student.update(student_params) 
+        p 'Updated'
+        format.html { redirect_to @student, notice: 'Student bio successfully updated.' }
+      else
+        p 'Denied'
+        format.html { render :edit }
+      end
     end
   end
 

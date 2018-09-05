@@ -1,0 +1,6 @@
+<h1> Instructor Profile </h1>
+
+<h3> <%= @instructor.full_name %> </h3>
+
+<%= link_to 'Back to Cohort', cohort_show_path(@instructor.cohort_id) %> 
+<%= link_to 'Edit Bio', edit_instructor_path %>
