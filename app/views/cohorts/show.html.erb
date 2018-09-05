@@ -10,8 +10,10 @@
 
 <div>
   <% i = @cohort.instructor %>
-  <%= link_to "#{i.full_name}", i %>
-  <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if i %>
+    <%= link_to "#{i.full_name}", i %>
+    <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
 
 
