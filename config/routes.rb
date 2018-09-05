@@ -12,11 +12,11 @@ Rails.application.routes.draw do
       resources :instructors, only: [:index, :new, :create, :destroy]
     end
   end
-  get 'course/:id' => 'courses#show', as: 'course_show'
+  get 'courses/:id' => 'courses#show', as: 'course_show'
   
   # Cohorts only 
   resources :cohorts, only: [:show, :edit, :update], except: [:show]
-  get 'cohort/:id' => 'cohorts#show', as: 'cohort_show'
+  get 'cohorts/:id' => 'cohorts#show', as: 'cohort_show'
 
   # Instructors only
   resources :instructors, only: [:show, :edit, :update]

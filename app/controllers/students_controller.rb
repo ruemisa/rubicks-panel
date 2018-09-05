@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:edit, :update, :show, :destroy]
-
+  before_action :set_parent, only: [:new, :create, :destroy]
   def index 
     @students = Student.all
   end
@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
     @student.destroy
     p 'Student has been denied!'
     respond_to do |format|
-      format.html { redirect_to cohort_url, notice: "#{@student.first_name} has been denied" }
+      format.html { redirect_to cohort_show_path(@cohort.slug), notice: "#{@student.first_name} has been denied" }
     end
   end
 
@@ -47,6 +47,11 @@ class StudentsController < ApplicationController
 
   def set_student 
     @student = Student.friendly.find(params[:id])
+  end
+
+  def set_parent
+    @course = Course.friendly.find(params[:course_id])
+    @cohort = Cohort.friendly.find(params[:cohort_id])
   end
 
 end
