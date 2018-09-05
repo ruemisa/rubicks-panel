@@ -5,8 +5,10 @@ class Cohort < ApplicationRecord
   
   # Data Validation
   validates_presence_of :name, :start_date, :end_date
+  validates :name, length: { minimum: 8, maximum: 80 }
 
-  # Association
+
+  # Associations
   belongs_to :course
   has_one :instructor, dependent: :nullify
   has_many :students, dependent: :nullify

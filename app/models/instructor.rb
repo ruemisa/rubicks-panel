@@ -5,6 +5,8 @@ class Instructor < ApplicationRecord
 
   # Data Validation
   validates_presence_of :first_name, :last_name, :age, :education, :salary
+  validates :age, numericality: { greater_than: 18, less_than: 150, only_integer: true }
+  validates :salary, numericality: { greater_than: 0 }
 
   # Associations
   belongs_to :cohort

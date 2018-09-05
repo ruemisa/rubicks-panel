@@ -5,6 +5,8 @@ class Student < ApplicationRecord
   
   # Data Validation
   validates_presence_of :first_name, :last_name, :age, :education
+  validates :age, numericality: { greater_than: 18, less_than: 150, only_integer: true }
+
 
   # Associations
   belongs_to :cohort
