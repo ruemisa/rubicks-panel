@@ -1,6 +1,16 @@
-<h1> Student Profile </h1>
+<div class="profile-grid">
 
-<h3> <%= @student.full_name %> </h3>
+  <div class="bio-links">
+    <%= link_to 'Back to Cohort', cohort_show_path(@student.cohort_id) %> 
+    <%= link_to 'Edit Bio', edit_student_path %>
+  </div>
 
-<%= link_to 'Back to Cohort', cohort_show_path(@student.cohort_id) %> 
-<%= link_to 'Edit Bio', edit_student_path %>
+  <h1> Student Dossier </h1>
+
+  <div class="bio-details">
+    <h2> Full Name: <%= "#{@student.last_name}, #{@student.first_name}" %> </h2>
+    <p> Age: <%= @student.age %> </p>
+    <p> Education: <%= @student.education %> </p>
+  </div>
+
+</div>

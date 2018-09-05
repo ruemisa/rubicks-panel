@@ -1,19 +1,28 @@
-<h1>Welcome to the <%= @course.title %> course!</h1>
-<%= link_to 'Back', courses_path %>
+<div class="courses-show">
 
-<p>Total Hours: <%= @course.total_hours %></p>
-
-<p><%= @course.details %></p>
-
-<h3> List of Cohorts </h3>
-
-<% @course.cohorts.each do |cohort| %>
-  <h4> <%= link_to "#{cohort.name}", cohort_show_path(cohort.slug) if cohort != nil %> </h4>
+  <div class="back-links">
+    <%= link_to 'Back', courses_path %>
+  </div>
   
+  <h1> <%= @course.title %> course </h1>
 
-  <%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <p>Total Hours: <%= @course.total_hours %></p>
 
-<div>
-  <%= link_to 'Add Cohort', new_course_cohort_path(@course.id) %> 
+  <p><%= @course.details %></p>
+
+  <div class="courses__cohorts">
+    <h2> List of Cohorts </h3>
+
+    <div class="cohorts-create">
+      <%= link_to 'Add Cohort', new_course_cohort_path(@course.id) %> 
+    </div>
+
+      <% @course.cohorts.each do |cohort| %>
+      <div class="cohorts-items">
+        <h3> <%= link_to "#{cohort.name}", cohort_show_path(cohort.slug) if cohort != nil %> </h4>
+        <span><%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </div>
+      <% end %>
+  </div>
+
 </div>

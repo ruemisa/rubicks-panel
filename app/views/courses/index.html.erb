@@ -13,7 +13,7 @@
     <h4>Course Details > > ></h4>
     <p><%= c.details %></p>
 
-    <div>
+    <div class="courses-links">
       <%= link_to 'Edit', edit_course_path(c) %> 
       <%= link_to 'Remove', course_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>

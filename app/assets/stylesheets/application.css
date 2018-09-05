@@ -31,3 +31,27 @@ body {
 li {
   list-style: none;
 } 
+
+a {
+  color: inherit;
+}
+
+/******************************/
+/***********HEADER*************/
+/******************************/
+
+header {
+  background-color: #eee;
+}
+
+/******************************/
+/***********FOOTER*************/
+/******************************/
+
+footer {
+  background-color: #eee;
+}
+
+footer nav li {
+  display: inline;
+}

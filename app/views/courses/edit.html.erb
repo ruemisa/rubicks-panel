@@ -1,6 +1,13 @@
-<h1>Update the Course</h1>
+<div class="courses-edit">
 
+  <div class="back-link">
 
-<%= render 'form', course: @course, location: 'courses-page' %>
+    <%= link_to 'Back', courses_path %>
+    
+  </div>
 
-<%= link_to 'Back', courses_path %>
+  <h1>Update Course Details</h1>
+
+    <%= render 'form', course: @course, location: 'courses-page' %>
+
+</div>
