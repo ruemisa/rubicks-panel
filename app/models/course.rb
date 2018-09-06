@@ -10,8 +10,8 @@ class Course < ApplicationRecord
   
   # Associations
   has_many :cohorts, dependent: :destroy
-  has_many :instructors, :through => :cohorts, dependent: :nullify
-  has_many :students, :through => :cohorts, dependent: :nullify
+  has_many :instructors, :through => :cohorts, dependent: :destroy # TODO: find a way to fix this up so that it will just nullify rather than destroy record
+  has_many :students, :through => :cohorts, dependent: :destroy # Same 
 
   accepts_nested_attributes_for :cohorts, allow_destroy: true
 

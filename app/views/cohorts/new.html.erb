@@ -1,6 +1,11 @@
-<h1>Create a New Cohort</h1>
+<div class="cohorts-new">
 
+  <div class="back-links">
+    <%= link_to 'Back', cohort_path%>
+  </div>
 
-<%= render 'form', cohort: @cohort %>
+  <h1> Enter Cohort Information </h1>
 
-<%= link_to 'Back', course_show_path(@course) %>
+  <%= render 'form', cohort: @cohort, location: 'cohorts-page' %>
+
+</div>

@@ -1,34 +1,38 @@
-<%= form_for([@course, @cohort, @instructor]) do |f| %>
+<div class="<%= location %>">
 
-  <div>
-    <%= f.text_field :first_name, placeholder: 'First Name', autofocus: true %>
-  </div>
+  <%= form_for([@course, @cohort, @instructor]) do |f| %>
 
-  <div>
-    <%= f.text_field :last_name, placeholder: 'Last Name' %>
-  </div>
+    <div>
+      <%= f.text_field :first_name, placeholder: 'First Name', autofocus: true %>
+    </div>
 
-  <div>
-    <%= f.text_field :age, placeholder: 'Age' %>
-  </div>
+    <div>
+      <%= f.text_field :last_name, placeholder: 'Last Name' %>
+    </div>
 
-  <div>
-    <%= f.radio_button :education, 'HS', :checked => true %> 
-    <%= label :education_hs, 'HS' %>
-    <%= f.radio_button :education, 'College' %>
-    <%= label :education_college, 'College' %>
-    <%= f.radio_button :education, 'Masters' %>
-    <%= label :education_masters, 'Masters' %>
-    <%= f.radio_button :education, 'PHD' %>
-    <%= label :education_phd, 'PHD' %>
-  </div>
+    <div>
+      <%= f.text_field :age, placeholder: 'Age' %>
+    </div>
 
-  <div>
-    <%= f.text_field :salary, placeholder: 'Salary' %>
-  </div>
+    <div>
+      <%= f.radio_button :education, 'HS', :checked => true %> 
+      <%= label :education_hs, 'HS' %>
+      <%= f.radio_button :education, 'College' %>
+      <%= label :education_college, 'College' %>
+      <%= f.radio_button :education, 'Masters' %>
+      <%= label :education_masters, 'Masters' %>
+      <%= f.radio_button :education, 'PHD' %>
+      <%= label :education_phd, 'PHD' %>
+    </div>
 
-  <div>
-    <%= f.submit %>
-  </div>
+    <div>
+      <%= f.text_field :salary, placeholder: 'Salary' %>
+    </div>
 
-<% end %>
+    <div>
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+
+</div>
