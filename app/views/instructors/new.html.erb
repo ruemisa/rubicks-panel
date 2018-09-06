@@ -1,5 +1,11 @@
-<h1> Employ an Instructor </h1>
+<div class="instructors-new">
 
-<%= render 'form', instructor: @instructor %>
+  <div class="back-links">
+    <%= link_to 'Back', instructor_path %>
+  </div>
 
-<%= link_to 'Back', cohort_show_path(@cohort.slug) %>
+  <h1> Enter Instructor Information </h1>
+
+  <%= render 'form', instructor: @instructor, location: 'instructors-page' %>
+
+</div>
