@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:edit, :update, :show, :destroy]
   # before_action authenticate_user!
-  # access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update]}, headmaster: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update, :edit]}, headmaster: :all
 
   def index
     @courses = Course.all

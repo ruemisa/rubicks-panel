@@ -2,7 +2,7 @@ class CohortsController < ApplicationController
   before_action :set_cohort, only: [:edit, :update, :show, :destroy]
   before_action :set_parent, only: [:new, :create, :destroy]
   # before_action authenticate_user!
-  # access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update]}, headmaster: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create, :update, :edit]}, headmaster: :all
 
   def index
     @cohorts = Cohort.all
