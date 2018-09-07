@@ -7,22 +7,22 @@ Rails.application.routes.draw do
   
   # Courses, Cohorts, Instructors, Students
   resources :courses, except: [:show] do
-    resources :cohorts, only: [:index, :new, :create, :destroy] do
-      resources :students, only:[:index, :new, :create, :destroy] 
-      resources :instructors, only: [:index, :new, :create, :destroy]
+    resources :cohorts, only: [:new, :create, :destroy] do
+      resources :students, only:[:new, :create, :destroy] 
+      resources :instructors, only: [:new, :create, :destroy]
     end
   end
   get 'courses/:id' => 'courses#show', as: 'course_show'
   
   # Cohorts only 
-  resources :cohorts, only: [:show, :edit, :update], except: [:show]
+  resources :cohorts, only: [:show, :edit, :update, :index], except: [:show]
   get 'cohorts/:id' => 'cohorts#show', as: 'cohort_show'
 
   # Instructors only
-  resources :instructors, only: [:show, :edit, :update]
+  resources :instructors, only: [:show, :edit, :update, :index]
 
   # Students only
-  resources :students, only: [:show, :edit, :update]
+  resources :students, only: [:show, :edit, :update, :index]
 
   # Other MAIN pages
   get 'about-us' => 'pages#about'

@@ -10,6 +10,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-
+    @courses = Course.all
+    @cohorts = Cohort.all 
+    @instructors = Instructor.all
+    @students = Student.all
   end
+
 end

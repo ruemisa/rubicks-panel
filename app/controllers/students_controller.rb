@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:edit, :update, :show, :destroy]
   before_action :set_parent, only: [:new, :create, :destroy]
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, instructor: {except: [:destroy, :new, :create]}, headmaster: :all
+  
   def index 
     @students = Student.all
   end
