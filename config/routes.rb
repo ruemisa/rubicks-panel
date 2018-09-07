@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # Other MAIN pages
   get 'about-us' => 'pages#about'
   get 'contact-us' => 'pages#contact'
+  get 'dashboard' => 'pages#dashboard'
 
   # HOME
   root to: 'pages#home'

@@ -3,7 +3,9 @@ module ApplicationHelper
     if current_user.is_a?(User)
       (link_to "Logout", destroy_user_session_path, method: :delete) +
       "<br>".html_safe +
-      (link_to "Courses", courses_path )
+      (link_to "Courses", courses_path ) +
+      "<br>".html_safe +
+      (link_to "Dashboard", dashboard_path )
     else  
       link_to "Login", new_user_session_path
     end
@@ -12,6 +14,7 @@ module ApplicationHelper
   def copyright_generator
     RamDevViewTool::Renderer.copyright 'Rubicks Academy', 'All rights reserved.'
   end
+
 end
 
 
