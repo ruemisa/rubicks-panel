@@ -1,0 +1,21 @@
+<div class="cohorts-index">
+
+  <h1> List of Active Cohorts </h1>
+
+  <div class="cohorts-list">
+    <% @cohorts.each do |cohort| %>
+      <div>
+        <h3> <%= link_to cohort.name, cohort_show_path(cohort.slug) %> </h3>
+        <p>  From: <%= cohort.start_date %> </p>
+        <p>  To: <%= cohort.end_date %> </p>
+        <p>  Instructor: <%= link_to cohort.instructor.full_name, instructor_path(cohort.instructor.slug)  %> </p>
+        <p>  Attendees: <%= cohort.students.count %> </p>
+        <div class="cohorts-links">
+          <%= link_to 'Edit Details', edit_cohort_path(cohort.slug) %>
+          <%= link_to 'Terminate Cohort', course_cohort_path(cohort.course_id, cohort.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

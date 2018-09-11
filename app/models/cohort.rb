@@ -10,7 +10,7 @@ class Cohort < ApplicationRecord
 
   # Associations
   belongs_to :course
-  has_one :instructor, dependent: :nullify
-  has_many :students, dependent: :nullify
+  has_one :instructor, dependent: :destroy
+  has_many :students, dependent: :destroy
 
 end
