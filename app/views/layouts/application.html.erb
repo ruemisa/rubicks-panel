@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="keywords" content="<%= @seo_keywords %>" />
-    <link rel="stylesheet" type="text/css" href="/assets/_flaticon.scss"> 
+    <link rel="stylesheet" type="text/css" href="/assets/flaticon.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,8 +16,6 @@
     <div class="wrapper">
 
       <%= render "shared/header" %>
-
-
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 

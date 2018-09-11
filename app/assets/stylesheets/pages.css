@@ -1,0 +1,39 @@
+/* HOME */
+
+.hero {
+  grid-area: body;
+  background: center / cover no-repeat url('/assets/school.png');
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+.hero-text {
+  border: 1px solid red;
+}
+
+.hero-text {
+  padding: 50px;
+  margin: auto;
+  align-self: center;
+  background-color: rgba(245, 245, 245, 0.7);
+}
+
+.hero-text * {
+  margin-bottom: 15px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  letter-spacing: .25rem;
+  padding: 10px;
+}
+
+.hero-text p {
+  font-size: 2rem;
+}
+
+.hero-text span:hover {
+  color: rgba(130, 4, 168, 0.7);
+}

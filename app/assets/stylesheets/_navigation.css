@@ -1,0 +1,45 @@
+/* TOP NAV */
+
+.main-nav a {
+  text-decoration: none;
+}
+
+.main-nav {
+  padding: 20px 10px;
+  font-size: 1.3rem;
+  letter-spacing: .35rem;
+  position: absolute;
+  top: 50%;
+  right: 1.5%;
+}
+
+.main-nav ul {
+  padding: 5px 15px;
+}
+
+.main-nav li {
+  display: inline;
+  padding: 0 15px;
+}
+
+.main-nav li:hover {
+  font-weight: bold;
+  color: rgb(237, 178, 40);
+}
+
+/* SOCIAL MEDIA */
+
+footer nav {
+  padding: 10px;
+}
+
+footer nav li {
+  display: inline;
+  padding: 1px 15px;
+}
+
+footer nav li:hover {
+  font-weight: bold;
+  color: rgb(237, 178, 40);
+}
+
