@@ -1,10 +1,14 @@
 <div class="dashboard">
 
-  <ul>
-    <li><%= link_to 'Courses', courses_path %></li>
-    <li><%= link_to 'Cohorts', cohorts_path %></li>
-    <li><%= link_to 'Instructors', instructors_path %></li>
-    <li><%= link_to 'Students', students_path %></li>
-  </ul>
+  <%= render 'shared/sidebar' %>
+
+  <section class="dashboard-items">
+
+    <div><%= link_to 'Courses', courses_path %></div>
+    <div><%= link_to 'Cohorts', cohorts_path %></div>
+    <div><%= link_to 'Instructors', instructors_path %></div>
+    <div><%= link_to 'Students', students_path %></div>
+
+  </section>
 
 </div>

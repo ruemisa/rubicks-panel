@@ -14,7 +14,13 @@ module ApplicationHelper
     RamDevViewTool::Renderer.copyright 'Rubicks Academy', 'All rights reserved.'
   end
 
+  def check_user 
+    if current_user.meta != nil 
+      "Hello, #{current_user.meta.name}" 
+    else  
+      "Hello, Instructor"
+    end
+  end
+
 end
 
-# Just in case I want users to register. Don't forget the () wrap around login link
-# (link_to "Register", new_user_registration_path) + "<br>".html_safe +

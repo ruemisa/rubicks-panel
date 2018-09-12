@@ -16,6 +16,7 @@
 
 @import url('./_navigation.css');
 @import url('./pages.css');
+@import url('./dashboard.css');
 
 :root {
   --black: rgb(25, 25, 25);
