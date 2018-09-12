@@ -1,0 +1,7 @@
+.students-index {
+  grid-area: body;
+  display: grid;
+  grid-template-columns: .25fr 1.75fr;
+  grid-auto-rows: auto;
+  height: auto;
+}

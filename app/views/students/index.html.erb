@@ -1,19 +1,23 @@
 <div class="students-index">
 
-  <h1> List of Our Students </h1>
+  <%= render 'shared/sidebar' %>
 
-  <div class="students-list">
-    <% @students.each do |student| %>
+  <div>
+    <h1> List of Our Students </h1>
 
-      <h3> <%= student.full_name %> </h3>
-      <p> Course id#: <%= student.course_id %> </p>
-      <p> Cohort id#: <%= student.cohort_id %> </p>
-      <div class="students-links">
-        <%= link_to 'Edit Details', edit_student_path(student.slug) %>
-        <%= link_to 'Expel Student', course_cohort_student_path(student.course_id, student.cohort_id, student.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    
-    <% end %>
+    <div class="students-list">
+      <% @students.each do |student| %>
+
+        <h3> <%= student.full_name %> </h3>
+        <p> Course id#: <%= student.course_id %> </p>
+        <p> Cohort id#: <%= student.cohort_id %> </p>
+        <div class="students-links">
+          <%= link_to 'Edit Details', edit_student_path(student.slug) %>
+          <%= link_to 'Expel Student', course_cohort_student_path(student.course_id, student.cohort_id, student.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      
+      <% end %>
+    </div>
   </div>
 </div>
 

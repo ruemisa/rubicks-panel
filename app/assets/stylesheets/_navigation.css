@@ -43,3 +43,37 @@ footer nav li:hover {
   color: rgb(237, 178, 40);
 }
 
+/* SIDEBAR */
+
+.sidebar {
+  background: linear-gradient(45deg, rgba(214,114,0,1) 0%, rgba(250,175,0,.85) 100%);
+  color: var(--white);
+  padding: 50px;
+}
+
+
+.sidebar h2 {
+  padding: 20px;
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sidebar ul li {
+  padding: 20px 10px;
+  border: 1.5px solid rgba(214, 114, 0, 1);
+  margin-bottom: 15px;
+}
+
+.sidebar ul li:hover {
+  box-shadow: 5px 5px 30px rgba(250, 175, 0, 1);
+  transition: .8s;
+  background-color: #fafafa;
+  color: var(--black);
+}
