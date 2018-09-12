@@ -1,8 +1,12 @@
 <nav class="main-nav">
   <ul>
+    <% if current_user == nil %>
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "About", about_us_path %></li>
     <li><%= link_to "Contact", '#' %></li>
     <li><%= login_helper %></li>
+    <% else %>
+    <li><%= login_helper %></li>
+    <% end %>
   </ul>
 </nav>

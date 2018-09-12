@@ -72,3 +72,15 @@
 }
 
 /* INSTRUCTOR SHOW */
+
+.profile-grid {
+  height: 70vh;
+}
+
+.bio-details {
+  width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(244, 244, 244, .85);
+  box-shadow: 5px 10px 35px 5px rgba(56,56,56,.7);  
+}

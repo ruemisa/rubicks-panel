@@ -4,11 +4,14 @@
     <%= link_to 'Back', course_show_path(@cohort.course_id) %>
   </div>
 
-  <h1> <%= @cohort.name %> | cohort details</h1>
-  
-  <div class="dates">
-    <p> Begin: <%= @cohort.start_date %> </p>
-    <p> End: <%= @cohort.end_date %> </p>
+
+  <div class="cohort-details">
+    <h1> <%= @cohort.name %> | cohort details</h1>
+    
+    <div class="dates">
+      <p> Begin: <%= @cohort.start_date %> </p>
+      <p> End: <%= @cohort.end_date %> </p>
+    </div>
   </div>
 
   <div class="cohorts-links">
@@ -17,14 +20,14 @@
       <%= link_to 'Edit Details', edit_cohort_path %>
   </div>
 
-  <div class="cohort-details">
+  <div class="cohort-info">
     <h3> Instructor </h3>
 
     <div>
-      <% i = @cohort.instructor %>
+      <% i = @cohort.instructor %> 
       <% if i %>
-        <%= link_to "#{i.full_name}", i %>
-        <%= link_to "Fire", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <h4><%= link_to "#{i.full_name}", i %></h4>
+        <%= link_to "Terminate", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
 
