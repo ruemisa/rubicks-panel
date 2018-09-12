@@ -20,8 +20,7 @@
 
     <% @course.cohorts.each do |cohort| %>
     <div class="cohorts-items">
-      <h3> <%= link_to "#{cohort.name}", cohort_show_path(cohort.slug) if cohort != nil %> </h4>
-      <span><%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      <span class="cohort-title"> <%= link_to "#{cohort.name}", cohort_show_path(cohort.slug) if cohort != nil %> </span>  &nbsp &nbsp <span class="terminate"> <%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?' } %> </span>
     </div>
     <% end %>
   </div>

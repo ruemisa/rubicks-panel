@@ -115,8 +115,7 @@
   align-self: center;
   justify-self: center;
   padding: 30px 5px 15px 15px;
-  margin-top: 50px;
-  margin-left: 10px;
+  margin: 50px 10px;
 }
 
 .back-links a {
@@ -165,7 +164,7 @@
 }
 
 .cohorts-create {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   padding: 15px;
 }
 
@@ -182,9 +181,34 @@
 }
 
 .cohorts-items * {
-  border: 1px solid red;
+  margin-bottom: 15px;
 }
 
 .cohorts-items {
   width: 80%;
+  padding: 30px 0;
 }
+
+.cohort-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.cohort-title:hover {
+  color: rgba(214, 114, 0, 1);
+}
+
+.terminate a {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(249, 11, 42, .8);
+  color: var(--white);
+  border-radius: 8px;
+}
+
+.terminate a:hover {
+  background-color: rgb(244, 0, 32);
+}
+
