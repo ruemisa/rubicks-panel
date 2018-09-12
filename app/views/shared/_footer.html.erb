@@ -1,5 +1,5 @@
 <footer>
-  
+  <% if current_user == nil %>
   <nav>
     <ul>
       <li><a href="#"><i class="flaticon-facebook"></i></a></li>
@@ -8,7 +8,7 @@
       <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
     </ul>
   </nav>
-
+  <% end %>
   <span> <%= copyright_generator %> </span>
 
 </footer>

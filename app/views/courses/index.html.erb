@@ -16,6 +16,8 @@
         <p>Total Hours: <%= c.total_hours %></p>
         <h4>Course Details > > ></h4>
         <p><%= c.details %></p>
+        <p> Instructors: <%= c.instructors.count %> </p>
+        <p> Attendees: <%= c.students.count %> </p>
         <div class="courses-links">
           <%= link_to 'Edit', edit_course_path(c) %> 
           <%= link_to 'Remove', course_path(c), method: :delete, data: { confirm: 'Are you sure?' } %>
