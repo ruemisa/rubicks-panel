@@ -1,3 +1,5 @@
+/* COHORTS INDEX */
+
 .cohorts-index {
   grid-area: body;
   display: grid;
@@ -5,3 +7,75 @@
   grid-auto-rows: auto;
   height: auto;
 }
+
+.cohorts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'title title title'
+  'create create create'
+  'card card card';
+  height: 50%;
+  margin: 50px 0 20px 0;
+}
+
+.cohorts-grid h1 {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+  font-size: 3rem;
+  letter-spacing: .2rem;
+  margin-bottom: 15px;
+  background-color: rgba(214,114,0,.8);
+  padding: 10px 20px;
+
+}
+
+.cohorts-list {
+  grid-area: card;
+  width: 90%;
+  margin: 0px auto;
+}
+
+.cohorts-info {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(244, 244, 244, .85);
+  box-shadow: 5px 10px 35px 5px rgba(56,56,56,.7);  
+}
+
+.cohorts-info * {
+  margin-bottom: 5px;
+}
+
+.cohorts-info h3 {
+  font-size: 2.2rem;
+}
+
+.cohorts-info h3:hover {
+  color: rgba(214, 114, 0, 1);
+}
+
+.cohorts-info p {
+  font-size: 1.2rem;
+  padding: 15px 0;
+}
+
+.link-instructor:hover {
+  color: rgba(214, 114, 0, 1);
+  font-weight: 700;
+}
+
+.cohorts-links a {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 15px;
+}
+
+.cohorts-links a:hover {
+  color: rgba(214, 114, 0, 1);
+}
+
+/* COHORT SHOW */

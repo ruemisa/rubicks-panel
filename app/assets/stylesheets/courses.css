@@ -73,6 +73,10 @@
   font-size: 2.2rem;
 }
 
+.details h3:hover {
+  color: rgba(214, 114, 0, 1);
+}
+
 .details h4 {
   font-size: 1.6rem;
 }
@@ -87,4 +91,100 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 10px 15px;
+}
+
+.courses-links a:hover {
+  color: rgba(214, 114, 0, 1);
+}
+
+/* COURSES SHOW */
+
+.courses-show {
+  grid-area: body;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas:
+  'back back back'
+  'details details details'
+  'list list list';
+  height: auto;
+}
+
+.back-links {
+  grid-area: back;
+  align-self: center;
+  justify-self: center;
+  padding: 30px 5px 15px 15px;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.back-links a {
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  background-color: rgba(214, 114, 0, 1);
+  border-radius: 10px;
+}
+
+.back-links a:hover {
+  font-weight: bold;
+  transition: .8s;
+  background-color: rgba(250, 175, 0, 1);  
+}
+
+.course-details {
+  grid-area: details;
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: rgba(10, 10, 10, .8);
+  color: var(--white);
+}
+
+.course-details h1 {
+  font-size: 2.8rem;
+  letter-spacing: .15rem;
+}
+
+.course-details p {
+  font-size: 1.3rem;
+}
+
+.courses__cohorts {
+  grid-area: list;
+  width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(244, 244, 244, .85);
+  box-shadow: 5px 10px 35px 5px rgba(56,56,56,.7);  
+}
+
+.courses__cohorts h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.cohorts-create {
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.cohorts-create a {
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: rgba(214, 114, 0, 1);
+}
+
+.cohorts-create a:hover {
+  font-weight: bold;
+  transition: .8s;
+  background-color: rgba(250, 175, 0, 1);  
+}
+
+.cohorts-items * {
+  border: 1px solid red;
+}
+
+.cohorts-items {
+  width: 80%;
 }
