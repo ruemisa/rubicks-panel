@@ -8,11 +8,6 @@
   justify-content: center;
 }
 
-
-.hero-text {
-  border: 1px solid red;
-}
-
 .hero-text {
   padding: 50px;
   margin: auto;
@@ -36,4 +31,57 @@
 
 .hero-text span:hover {
   color: rgba(130, 4, 168, 0.7);
+}
+
+/* ABOUT */
+
+.about-page {
+  grid-area: body;
+  background-color: #fafafa;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 40px 15px;
+  height: auto;
+  background: linear-gradient(45deg, rgba(214,114,0,1) 0%, rgba(250,175,0,.85) 100%);
+}
+
+.about-page h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
+
+}
+
+.about-page figure {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+  width: 80%;
+}
+
+.about-page figure img {
+  height: 50vh;
+  width: 50vw;
+  margin-bottom: 15px;
+  box-shadow: 0px 15px 30px -4px rgba(107,107,107,0.8);
+}
+
+.about-page figure figcaption {
+  font-style: italic;
+  letter-spacing: .2rem;
+}
+
+.about-text {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  letter-spacing: .15rem;
 }
