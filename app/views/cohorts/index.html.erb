@@ -13,10 +13,12 @@
           <p>  To: <%= cohort.end_date %> </p>
           <p>  Instructor: <span class="link-instructor"><%= link_to cohort.instructor.full_name, instructor_path(cohort.instructor.slug) unless cohort.instructor == nil  %></span> </p>
           <p>  Attendees: <%= cohort.students.count %> </p>
+          <% if current_user.roles == "headmaster" %>
           <section class="cohorts-links">
             <%= link_to 'Edit Details', edit_cohort_path(cohort.slug) %>
             <%= link_to 'Terminate Cohort', course_cohort_path(cohort.course_id, cohort.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %>
           </section>
+          <% end %>
         </div>
       <% end %>
     </div>

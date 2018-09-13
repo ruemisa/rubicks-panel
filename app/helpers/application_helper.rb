@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def login_helper
     if current_user.is_a?(User)
       (link_to "Dashboard", dashboard_path ) +

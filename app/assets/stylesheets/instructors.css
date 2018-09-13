@@ -71,20 +71,6 @@
   color: rgba(214, 114, 0, 1);
 }
 
-/* INSTRUCTOR SHOW */
-
-.profile-grid {
-  height: 70vh;
-}
-
-.bio-details {
-  width: 90%;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: rgba(244, 244, 244, .85);
-  box-shadow: 5px 10px 35px 5px rgba(56,56,56,.7);  
-}
-
 /* NEW AND EDIT PAGES */
 
 .instructors-form {
@@ -124,4 +110,60 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 20px;
+}
+
+/* INSTRUCTOR SHOW */
+
+.profile-grid {
+  grid-area: body;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas: 
+  '. title .'
+  'links links links'
+  'bio bio bio';
+  padding: 50px 0;
+}
+
+.profile-grid h1 {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 20px;
+  font-size: 2.9rem;
+}
+
+.bio-links {
+  grid-area: links;
+  background: linear-gradient(45deg, rgba(214,114,0,1) 0%, rgba(250,175,0,.85) 100%);
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.bio-links a {
+  margin-left: 55px;
+}
+
+.bio-details {
+  grid-area: bio;
+  width: 90%;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(244, 244, 244, .85);
+  box-shadow: 5px 10px 35px 5px rgba(56,56,56,.7);  
+}
+
+.bio-details h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.bio-details p {
+  font-size: 1.3rem;
+  padding: 15px;
+  margin-bottom: 10px;
 }

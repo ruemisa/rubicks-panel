@@ -11,12 +11,14 @@
         <h3> <%= link_to instructor.full_name, instructor_path(instructor.slug) %> </h3>
         <p> Course id#: <%= instructor.course_id %> </p>
         <p> Cohort id#: <%= instructor.cohort_id %> </p>
+        <% if current_user.roles == "headmaster" %>
         <section class="instructors-links">
           <%= link_to 'Edit Details', edit_instructor_path(instructor.slug) %>
           <span class="terminate">
             <%= link_to 'Terminate Instructor', course_cohort_instructor_path(instructor.course_id, instructor.cohort_id, instructor.id), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %> 
           </span>
         </section>
+        <% end %>
       </div>
       <% end %>
     </div>
