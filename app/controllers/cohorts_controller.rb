@@ -38,9 +38,6 @@ class CohortsController < ApplicationController
     respond_to do |format|
       if @cohort.update(cohort_params) 
         p 'Updated'
-        # >>>
-        # TODO: FIND A WAY TO REDIRECT TO SHOW PATH FROM HERE.
-        # <<<
         format.html { redirect_to @cohort, notice: 'Cohort successfully updated.' }
       else
         p 'Denied'
@@ -49,15 +46,12 @@ class CohortsController < ApplicationController
     end
   end
 
-  # >>>
-  # TODO: FIX DESTROY FUNCTIONALITY FOR COHORTS FUCK THIS SHIT
-  # <<<
-  
   def destroy
-    @cohort.destroy
     p 'Removed Cohort'
+    @cohort.destroy
     respond_to do |format|
-      format.html { redirect_to course_show_path(@course.slug) , notice: 'Cohort removed!' }
+      format.js
+      format.html { redirect_to course_show_path(@course.slug) }
     end
   end
 

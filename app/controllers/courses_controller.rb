@@ -37,9 +37,6 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.update(course_params) 
         p 'Updated'
-        # >>>
-        # TODO: FIND A WAY TO REDIRECT TO SHOW PATH FROM HERE.
-        # <<<
         format.html { redirect_to courses_path, notice: 'Course successfully updated.' }
       else
         p 'Denied'
@@ -49,9 +46,10 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @course.destroy
     p 'Removed Course'
+    @course.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to courses_url, notice: 'Course removed!' }
     end
   end

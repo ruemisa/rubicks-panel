@@ -30,10 +30,11 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    @student.destroy
     p 'Student has been denied!'
+    @student.destroy
     respond_to do |format|
-      format.html { redirect_to cohort_show_path(@cohort.slug), notice: "#{@student.first_name} has been denied" }
+      format.js 
+      format.html { redirect_to root_path }
     end
   end
 

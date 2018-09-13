@@ -78,3 +78,6 @@ gem 'ram_dev_view_tool', '~> 0.1.1'
 
 # Sentry error checker 
 gem 'sentry-raven', '~> 2.7', '>= 2.7.4'
+
+# Jquery for AJAX
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

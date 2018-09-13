@@ -27,7 +27,9 @@
       <% i = @cohort.instructor %> 
       <% if i %>
       <h4><%= link_to "#{i.full_name}", i %></h4>
-        <%= link_to "Terminate", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <span class="terminate">
+          <%= link_to "Terminate", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %>
+        </span>
       <% end %>
     </div>
 
@@ -36,7 +38,9 @@
       <% @cohort.students.each do |s| %>
     <div>
         <%= link_to "#{s.full_name}", s %>
-        <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <span class="terminate">
+          <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %>
+        </span>
     </div>
       <% end %>
   </div>

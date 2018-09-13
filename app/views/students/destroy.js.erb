@@ -1,0 +1,4 @@
+$('.denied').bind('ajax:success', function() {
+  console.log('deleting...');
+  $(this).closest('div').fadeOut();
+});
