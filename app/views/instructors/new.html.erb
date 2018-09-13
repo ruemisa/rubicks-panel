@@ -1,11 +1,11 @@
-<div class="instructors-new">
+<div class="instructors-form">
 
-  <div class="back-links">
+  <div class="back-link">
     <%= link_to 'Back', cohort_path(@cohort.id) %>
   </div>
 
   <h1> Enter Instructor Information </h1>
 
-  <%= render 'form', instructor: @instructor, location: 'instructors-page' %>
+  <%= render 'form', instructor: @instructor %>
 
 </div>

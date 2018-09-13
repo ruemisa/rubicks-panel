@@ -212,3 +212,44 @@
   background-color: rgb(244, 0, 32);
 }
 
+/* COURSES FORM PAGES */
+
+.courses-form {
+  grid-area: body;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'back . '
+  'title title'
+  'form form';
+  height: auto;
+  padding: 50px;
+  background: linear-gradient(45deg, rgba(214,114,0,1) 0%, rgba(250,175,0,.85) 100%);
+}
+
+.back-link {
+  grid-area: back;
+  align-self: center;
+  justify-self: start;
+  padding: 10px 30px;
+  background-color: rgba(5, 5, 5, .7);
+  color: var(--white);
+  font-size: 1.3rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  background-color: var(--white);
+  color: rgba(214, 114, 0, 1);
+  transition: .8s;
+}
+
+.courses-form h1 {
+  grid-area: title;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+

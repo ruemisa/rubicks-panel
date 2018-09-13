@@ -1,0 +1,66 @@
+.universal-form {
+  grid-area: form;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.universal-form form {
+  margin: 10px auto;
+  padding: 50px 30px;
+  background-color: rgba(118, 122, 117, .5);
+}
+
+.universal-form form * {
+  font-family: inherit;
+}
+
+.universal-form input {
+  margin: 20px 0;
+  padding: 10px 0;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 1.2rem;
+}
+
+.universal-form input::placeholder, .universal-form textarea::placeholder {
+  color: #000;
+}
+
+.universal-form input:focus {
+  outline: none;
+  font-weight: bold;
+}
+
+.universal-form textarea {
+  margin-bottom: 15px;
+  height: 150px;
+  width: 300px;
+  border: none;
+  font-size: 1.2rem;
+
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+.submit-btn input {
+  padding: 15px;
+  background-color: rgba(5, 5, 5, .7);
+  color: var(--white);
+  border-radius: 8px; 
+  font-weight: bold; 
+  border: none;
+}
+
+.submit-btn input:hover {
+  cursor: pointer;
+  background-color: rgba(11, 124, 26, 1);
+  color: rgba(31, 59, 8, 1); 
+}

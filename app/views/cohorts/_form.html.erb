@@ -1,4 +1,4 @@
-<div class="<%= location %>">
+<div class="universal-form">
 
   <%= form_for([@course, @cohort]) do |f| %>
 
@@ -14,7 +14,7 @@
       <%= f.date_field :end_date, placeholder: 'End Date' %>
     </div>
 
-    <div>
+    <div class="submit-btn">
       <%= f.submit %>
     </div>
 
