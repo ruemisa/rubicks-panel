@@ -100,10 +100,10 @@ Bundler is important for installing the all of the dependencies needed for this 
 #### Author's Notes & Future Features ####
 
 * Future Features
-  Sign up/Enroll page and form. 
-  Grading system
-  Better UI (since it looks flat as it is)
-  Search function (for course, cohort, instructor, student)
+  1. Sign up/Enroll page and form. 
+  1. Grading system
+  1. Better UI (since it looks flat as it is)
+  1. Search function (for course, cohort, instructor, student)
 
 * Author's Notes
 
