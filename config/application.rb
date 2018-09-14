@@ -15,5 +15,8 @@ module RubicksPanel
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    Raven.configure do |config|
+      config.dsn = 'https://18dc0ad1292b434dbbc71701b36b4418:53ff4e29b79c4e0da328e2da6bf3d747@sentry.io/1280757'
+    end
   end
 end
