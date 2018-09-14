@@ -22,7 +22,7 @@ Login                 | Password
 ----------------------|--------------
 rubick@admin.com      | 111111
 rylai@instructor.com  | 111111
-----------------------|--------------
+
 
 #### Technologies Used ####
 
