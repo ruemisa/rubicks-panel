@@ -15,7 +15,7 @@
     <h2> List of Cohorts </h3>
 
     <div class="cohorts-create">
-      <%= link_to 'Add Cohort', new_course_cohort_path(@course.id) unless current_user.roles != "headmaster" %> 
+      <%= link_to 'Add Cohort', new_course_cohort_path(@course.id) %> 
     </div>
 
     <% @course.cohorts.each do |cohort| %>
