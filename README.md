@@ -22,7 +22,7 @@ Login                 | Password
 ----------------------|--------------
 rubick@admin.com      | 111111
 rylai@instructor.com  | 111111
-----------------------|--------------
+
 
 #### Technologies Used ####
 
@@ -76,34 +76,34 @@ Bundler is important for installing the all of the dependencies needed for this 
 #### Components ####
 
 * Home Page 
-  Contains a hero image and welcome message (although, it is just a placeholder for now)
+  * Contains a hero image and welcome message (although, it is just a placeholder for now)
 * About Page
-  Details about the academy (or should I say, its headmaster).
+  * Details about the academy (or should I say, its headmaster).
 * Contact Page 
-  Will basically all contact information of the school (Prepared for a future feature wherein students can enroll and sign up)
+  * Will basically all contact information of the school (Prepared for a future feature wherein students can enroll and sign up)
 * Login Page 
-  Admin and instructors can sign into their respective dashboards
+  * Admin and instructors can sign into their respective dashboards
 * Dashboard 
-  Contains links to Courses, Cohorts, Instructors, and Students. 
+  * Contains links to Courses, Cohorts, Instructors, and Students. 
 * Courses
-  Display all of the courses available. Also has the create button located on top for the Admin to be able to add a course 
+  * Display all of the courses available. Also has the create button located on top for the Admin to be able to add a course 
 * Cohorts 
-  Cohorts are shown under their respective course page.
-  The course page itself has the ability to add a cohort to itself. 
+  * Cohorts are shown under their respective course page.
+  * The course page itself has the ability to add a cohort to itself. 
 * Instructors
-  A list of instructors are shown on a separate page from the main dashboard.
-  Each name is linked to their respective profiles. 
-  They also show under their respective cohorts (There is only one instructor per cohort)
+  * A list of instructors are shown on a separate page from the main dashboard.
+  * Each name is linked to their respective profiles. 
+  * They also show under their respective cohorts (There is only one instructor per cohort)
 * Students
-  Same case with the instructor. 
+  * Same case with the instructor. 
 
 #### Author's Notes & Future Features ####
 
 * Future Features
-  Sign up/Enroll page and form. 
-  Grading system
-  Better UI (since it looks flat as it is)
-  Search function (for course, cohort, instructor, student)
+  1. Sign up/Enroll page and form. 
+  1. Grading system
+  1. Better UI (since it looks flat as it is)
+  1. Search function (for course, cohort, instructor, student)
 
 * Author's Notes
 
