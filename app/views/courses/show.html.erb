@@ -21,7 +21,7 @@
     <% @course.cohorts.each do |cohort| %>
     <div class="cohorts-items">
       <span class="cohort-title"> <%= link_to "#{cohort.name}", cohort_show_path(cohort.slug) if cohort != nil %> </span>  &nbsp &nbsp <span class="terminate"> 
-        <%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' unless current_user.roles != "headmaster "%> 
+        <%= link_to 'Terminate Cohort', course_cohort_path(@course.slug, cohort.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %> 
       </span>
     </div>
     <% end %>

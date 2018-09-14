@@ -1,10 +1,8 @@
 <div class="profile-grid">
-  <% if current_user.roles == "headmaster" %>
   <div class="bio-links">
     <%= link_to 'Back to Cohort', cohort_show_path(@student.cohort_id) %> 
     <%= link_to 'Edit Bio', edit_student_path %>
   </div>
-  <% end %>
   <h1> Student Dossier </h1>
 
   <div class="bio-details">

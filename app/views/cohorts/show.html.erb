@@ -13,13 +13,11 @@
       <p> End: <%= @cohort.end_date %> </p>
     </div>
   </div>
-  <% if current_user.roles == "headmaster" %>
   <div class="cohorts-links">
       <%= link_to 'Add Students', new_course_cohort_student_path(@cohort.course_id, @cohort.id) %>
       <%= link_to 'Assign Instructor', new_course_cohort_instructor_path(@cohort.course_id, @cohort.id) %>
       <%= link_to 'Edit Details', edit_cohort_path %>
   </div>
-  <% end %>
   <div class="cohort-info">
     <h3> Instructor </h3>
 
@@ -30,7 +28,7 @@
         <%= link_to "#{i.full_name}", i %>
       </span>
       <span class="terminate">
-        <%= link_to "Terminate", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' unless current_user.roles != "headmaster" %>
+        <%= link_to "Terminate", course_cohort_instructor_path(i.course_id, i.cohort_id, i.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %>
       </span>
       <% end %>
     </div>
@@ -43,7 +41,7 @@
           <%= link_to "#{s.full_name}", s %>
         </span>
         <span class="terminate">
-          <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' unless current_user.roles != "headmaster" %>
+          <%= link_to "Expel", course_cohort_student_path(s.course_id, s.cohort_id, s.slug), method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'denied' %>
         </span>
     </div>
       <% end %>
